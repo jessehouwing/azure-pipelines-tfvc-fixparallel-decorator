@@ -3,7 +3,7 @@
     "id": "azure-pipelines-tfvc-fixparallel-decorator",
     "publisher": "jessehouwing",
     "version": "1.0.0",
-    "name": "Verify Signed Decorator",
+    "name": "Fix TFVC parallel issues on hosted pipeline",
     "description": "Azure DevOps Extension",
     "categories": [
         "Azure Pipelines"
@@ -21,7 +21,7 @@
             "id": "azure-pipelines-tfvc-fixparallel-decorator",
             "type": "ms.azure-pipelines.pipeline-decorator",
             "targets": [
-                "ms.azure-pipelines-agent-job.pre-checkout-tasks"
+                "ms.azure-pipelines-agent-job.pre-job-tasks"
             ],
             "properties": {
                 "template": "azure-pipelines-tfvc-fixparallel-decorator.yml"
