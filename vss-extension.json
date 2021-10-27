@@ -1,0 +1,38 @@
+{
+    "manifestVersion": 1,
+    "id": "azure-pipelines-tfvc-fixparallel-decorator",
+    "publisher": "jessehouwing",
+    "version": "1.0.0",
+    "name": "Verify Signed Decorator",
+    "description": "Azure DevOps Extension",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "logo.png"
+    },
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "azure-pipelines-tfvc-fixparallel-decorator",
+            "type": "ms.azure-pipelines.pipeline-decorator",
+            "targets": [
+                "ms.azure-pipelines-agent-job.pre-checkout-tasks"
+            ],
+            "properties": {
+                "template": "azure-pipelines-tfvc-fixparallel-decorator.yml"
+            }
+        }
+    ],
+    "files": [
+        {
+            "path": "azure-pipelines-tfvc-fixparallel-decorator.yml",
+            "addressable": true,
+            "contentType": "text/plain"
+        }
+    ]
+}
