@@ -1,3 +1,4 @@
 steps:
-- task: jessehouwing.jessehouwing-vsts-tfvc-tasksDEV.vsts-tfvc-fixparallel.tf-vc-fixparallel@2
+- task: tf-vc-fixparallel@2
   displayName: 'Fix parallel execution on hosted agent.'
+  condition: eq(variables["Build.Repository.Provider"], "TfsVersionControl")
