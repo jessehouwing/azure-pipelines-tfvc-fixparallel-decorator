@@ -1,3 +1,14 @@
 steps:
+- task: CmdLine@2
+  displayName: 'Fix parallel execution on hosted agent 1/2.'
+  inputs:
+    script: |
+      @echo off
+      echo System.JobId:%SYSTEM_JOBID%
+      echo System.JobAttempt:%SYSTEM_JOBATTEMPT%
+      echo Agent.AgentId:%AGENT_ID%
+      echo System.ServerType:%SYSTEM_SERVERTYPE%
+      echo Agent.MachineName:%AGENT_MACHINENAME%
+      echo Build.Repository.Tfvc.Workspace:%BUILD_REPOSITORY_TFVC_WORKSPACE%
 - task: tf-vc-fixparallel@2
-  displayName: 'Fix parallel execution on hosted agent.'
+  displayName: 'Fix parallel execution on hosted agent 2/2.'
