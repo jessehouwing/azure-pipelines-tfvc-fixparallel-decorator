@@ -1,5 +1,8 @@
 steps:
-- task: tf-vc-fixparallel-log@2
-  displayName: 'Fix parallel execution on hosted agent 1/2.'
-- task: tf-vc-fixparallel@2
-  displayName: 'Fix parallel execution on hosted agent 2/2.'
+- ${{ if not(eq(variables['azure-pipelines-tfvc-fixparallel-decorator.skip'], 'true')) }}:
+  - task: tf-vc-fixparallel-log@2
+    displayName: 'Fix parallel execution on hosted agent 1/2.'
+    condition: and (succeeded(), eq(variables['Agent.OS'], 'Windows_NT'))
+  - task: tf-vc-fixparallel@2
+    displayName: 'Fix parallel execution on hosted agent 2/2.'
+    condition: and (succeeded(), eq(variables['Agent.OS'], 'Windows_NT'))
